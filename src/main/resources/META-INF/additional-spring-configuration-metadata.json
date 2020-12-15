@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "welcome.message",
+      "type": "java.lang.String",
+      "description": "Description for welcome.message."
+    },
+    {
+      "name": "error.message",
+      "type": "java.lang.String",
+      "description": "Description for error.message."
+    }
+  ] }

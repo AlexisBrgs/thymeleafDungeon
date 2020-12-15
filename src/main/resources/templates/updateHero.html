@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Hero</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Update a Hero:</h1>
+
+<form th:action="|/update/${hero.id}|"
+      th:object="${heroForm}" method="POST">
+    Name:
+    <input type="text" th:field="*{name}" th:placeholder="${hero.name}">
+    <input type="text" th:field="*{type}" th:placeholder="${hero.type}">
+    <input type="hidden" th:field="*{id}">
+    <br/><br/>
+    <input type="submit" value="Update"/>
+</form>
+
+<br/>
+
+<!-- Check if errorMessage is not null and not empty -->
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+    ...
+</div>
+</body>
+</html>

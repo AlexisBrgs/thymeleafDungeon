@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hero List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Hero List</h1>
+<a href="addHero">Add Hero</a>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each ="hero : ${heroes}">
+            <td th:utext="${hero.id}">...</td>
+            <td><a th:href="|/showHero/${hero.id}|" th:utext="${hero.name}"></a></td>
+            <td th:utext="${hero.type}">...</td>
+            <td><a th:href="|/updateForm/${hero.id}|">Edit this one...</a></td>
+            <td><a th:href="|/delete/${hero.id}|">Throw this one into the garbage</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

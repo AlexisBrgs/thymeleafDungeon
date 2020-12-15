@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Show Hero</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Hero</h1>
+<a href="/heroList">Back to the list of heroes</a>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+        <tr>
+            <td th:utext="${hero.id}">...</td>
+            <td th:utext="${hero.name}">...</td>
+            <td th:utext="${hero.type}">...</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
